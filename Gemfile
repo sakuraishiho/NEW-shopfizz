@@ -50,7 +50,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 
   # Reduces boot times through caching; required in config/boot.rb
-  gem "bootsnap", require: false
+ gem "bootsnap", require: false
+ gem "rubocop", require: false
+ gem "rubocop-performance", require: false
+ gem "rubocop-rails", require: false
 end
 
 group :development do
@@ -70,3 +73,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+ gem "devise"
+ gem "stripe"
