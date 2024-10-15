@@ -29,10 +29,16 @@ Rails.application.routes.draw do
         get 'success'
       end
     end
+    resources :customers do
+      collection do
+        get 'confirm_withdraw'
+        patch 'withdraw'
+      end
+    end
   end
 
   get '/up/', to: 'up#index', as: :up
   get '/up/databases', to: 'up#databases', as: :up_databases
-  get 'test_render500', to: 'errors#test_render500'
   get '*path', to: 'application#render404'
+  get 'test_render500', to: 'errors#test_render500'
 end
