@@ -40,6 +40,7 @@ class Customer::WebhooksController < ApplicationController
 
       # トランザクション処理終了
       customer.cart_items.destroy_all # 顧客のカート内商品を全て削除
+      OrderMailer.complete(email: session.customer_details.email).deliver_later
       # レスポンスを返す
       render json: { message: 'Webhook received and processed successfully' }, status: :ok
     end
