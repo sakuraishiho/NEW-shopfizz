@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   get '/up/', to: 'up#index', as: :up
   get '/up/databases', to: 'up#databases', as: :up_databases
-  get '*path', to: 'application#render404'
-  get 'test_render500', to: 'errors#test_render500'
+  match '/500', to: 'application#render500', via: :all
+  match '/404', to: 'application#render404', via: :all
+  get 'test_render500', to: 'error/errors#test_render500'
 end
