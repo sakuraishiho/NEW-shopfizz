@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_admin!
-  before_action :set_product, only: %i[show edit update]
+  before_action :set_product, only: %i[show edit update destroy]
   def index
     @products = Product.all
   end
@@ -27,6 +27,16 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_product_path(@product)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+  
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove("product-#{@product.id}") }
+      format.html { redirect_to admin_products_path, notice: 'Product was successfully deleted.' }
     end
   end
 

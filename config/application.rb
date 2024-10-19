@@ -44,6 +44,6 @@ module Hello
 
     config.time_zone = 'Tokyo'
 
-    config.exceptions_app = self.routes
+    config.exceptions_app = routes
   end
 end
