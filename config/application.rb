@@ -45,5 +45,11 @@ module Hello
     config.time_zone = 'Tokyo'
 
     config.exceptions_app = routes
+
+    config.after_initialize do
+      Rails.application.routes.append do
+        match '*path', to: 'application#render404', via: :all
+      end
+    end
   end
 end
