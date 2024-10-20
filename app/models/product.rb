@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  paginates_per 10
   with_options presence: true do
     validates :name
     validates :description

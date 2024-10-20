@@ -3,7 +3,7 @@ class Admin::ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = Product.all
+    @products = Product.page(params[:page]).per(15) # 1ページあたり10件を表示
   end
 
   def new
@@ -13,7 +13,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to admin_product_path(@product)
+      redirect_to admin_product_path(@product), notice: 'Product was successfully created.'
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to admin_product_path(@product)
+      redirect_to admin_product_path(@product), notice: 'Product was successfully updated.'
     else
       render :edit
     end

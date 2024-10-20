@@ -76,4 +76,7 @@ end
 
  gem "devise"
  gem "stripe"
- gem "kaminari"
+gem 'kaminari', '1.2.2'
+gem 'kaminari-actionview', '1.2.2'
+gem 'kaminari-activerecord', '1.2.2'
+gem 'kaminari-core', '1.2.2'
