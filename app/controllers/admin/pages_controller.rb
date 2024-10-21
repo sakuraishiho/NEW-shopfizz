@@ -3,6 +3,7 @@ class Admin::PagesController < ApplicationController
 
   def home
     @orders, @selected = get_orders(params)
+    @orders = Order.page(params[:page]).per(10) # 1ページあたり10件を表示
     today_orders = Order.created_today
     @today_total_orders = total_orders(today_orders)
     @today_total_sales = total_sales(today_orders)
@@ -28,7 +29,7 @@ class Admin::PagesController < ApplicationController
     when 'shipped'
       [Order.shipped.eager_load(:customer).latest, 'shipped']
     when 'out_of_delivery'
-      [Order.latest.out_of_delivery.eager_load(:customer).latest, 'out_of_delivery']
+      [Order.out_of_delivery.eager_load(:customer).latest, 'out_of_delivery']
     when 'delivered'
       [Order.delivered.eager_load(:customer).latest, 'delivered']
     end

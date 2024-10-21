@@ -1,6 +1,6 @@
 class Customer::ProductsController < ApplicationController
   def index
-    @products, @sort = get_products(params)
+    @products = Product.page(params[:page]).per(9) # 1ページあたり9件を表示
   end
 
   def show

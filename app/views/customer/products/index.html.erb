@@ -14,7 +14,7 @@
     <%= link_to 'Price: Low to High', products_path(price_low_to_high: true) %>
   </div>
 </div>
-<div class='flex flex-wrap justify-center'>
+<div class='flex flex-wrap justify-start'>
   <% @products.each do |product| %>
     <div class="w-full max-w-sm rounded-lg xl:w-4/12 md:w-6/12">
       <%= link_to product_path(product) do %>
@@ -35,3 +35,5 @@
     </div>
   <% end %>
 </div>
+
+<%= paginate @products %>

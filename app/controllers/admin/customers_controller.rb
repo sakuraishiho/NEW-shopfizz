@@ -4,6 +4,7 @@ class Admin::CustomersController < ApplicationController
 
   def index
     @customers = Customer.preload(:orders).latest
+    @customers = Customer.page(params[:page]).per(10) # 1ページあたり10件を表示
   end
 
   def show; end

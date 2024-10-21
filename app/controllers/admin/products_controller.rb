@@ -3,7 +3,7 @@ class Admin::ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = Product.page(params[:page]).per(15) # 1ページあたり10件を表示
+    @products = Product.page(params[:page]).per(10) # 1ページあたり10件を表示
   end
 
   def new
