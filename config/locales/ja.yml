@@ -1,0 +1,34 @@
+ja:
+  time:
+    formats:
+      short: "%Y年%m月%d日 %H:%M"
+      long: "%Y年%m月%d日 %H時%M分%S秒"
+  date:
+    formats:
+      default: "%Y年%m月%d日"
+      short: "%Y年%m月%d日"
+      long: "%Y年%m月%d日 (%A)"
+
+  activerecord:
+    errors:
+      models:
+        customer:
+          attributes:
+            name:
+              blank: "名前を入力してください"
+            email:
+              blank: "メールアドレスを入力してください"
+              invalid: "有効なメールアドレスを入力してください"
+            password:
+              blank: "パスワードを入力してください"
+              too_short: "パスワードは最低 %{count} 文字以上にしてください"
+            password_confirmation:
+              confirmation: "パスワード確認が一致しません"
+      messages:
+        not_saved: "%{count} 件のエラーが保存を妨げました。"  # 修正
+    attributes:
+      customer:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"

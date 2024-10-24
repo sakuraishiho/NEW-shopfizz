@@ -32,10 +32,10 @@ class Customer::SessionsController < Devise::SessionsController
 
     return if customer.valid_password?(params[:customer][:password]) && customer.active_for_authentication?
 
-    alert_message = if customer.status == 'withdrawn'
-                      'You have already resugned'
+    alert_message = if customer.status == '退会済'
+                      'あなたはすでに退会しています'
                     else
-                      'Yor account is suspended'
+                      'あなたのアカウントは停止されています'
                     end
     redirect_to request.referer, alert: alert_message
   end

@@ -8,9 +8,9 @@ class Customer < ApplicationRecord
     validates :status
   end
   enum status: {
-    normal: 0,
-    withdrawn: 1,
-    banned: 2
+    "通常": 0,
+    "退会済": 1,
+    "利用停止": 2
   }
   has_many :cart_items, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -34,6 +34,6 @@ class Customer < ApplicationRecord
   end
 
   def active_for_authentication?
-    super && (status == 'normal')
+    super && (status == '通常')
   end
 end

@@ -1,6 +1,12 @@
+<div class="relative mb-6">
+  <div class="absolute right-0 top-0 mt-4 mr-4">
+    <%= button_to "Shopfizzから退会", confirm_withdraw_customers_path, method: :get, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
+  </div>
+</div>
+
 <div class="mb-6 text-center">
   <span class="text-3xl font-bold">
-    Edit Profile
+    プロフィール編集
   </span>
 </div>
 
@@ -14,36 +20,32 @@
     <% end %>
 
     <div class="mb-6">
-      <%= f.label :name, class: "mb-2 block text-sm text-gray-600" %>
+      <%= f.label :お名前, class: "mb-2 block text-sm text-gray-600" %>
       <%= f.text_field :name, class: "w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
     </div>
 
     <div class="mb-6">
-      <%= f.label :email, class: "mb-2 block text-sm text-gray-600" %>
+      <%= f.label :メールアドレス, class: "mb-2 block text-sm text-gray-600" %>
       <%= f.email_field :email, class: "w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
     </div>
 
     <div class="mb-6">
-      <%= f.label :password, "password", class: "mb-2 block text-sm text-gray-600" %>
+      <%= f.label :password, "新しいパスワード", class: "mb-2 block text-sm text-gray-600" %>
       <%= f.password_field :password, class: "w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
     </div>
 
     <div class="mb-6">
-      <%= f.label :password_confirmation, class: "mb-2 block text-sm text-gray-600" %>
+      <%= f.label :新しいパスワード（確認用）, class: "mb-2 block text-sm text-gray-600" %>
       <%= f.password_field :password_confirmation, class: "w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
     </div>
 
     <div class="mb-6">
-      <%= f.label :current_password, class: "mb-2 block text-sm text-gray-600" %>
+      <%= f.label :現在のパスワード, class: "mb-2 block text-sm text-gray-600" %>
       <%= f.password_field :current_password, class: "w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Update Profile", class: "inline-flex w-full items-center justify-center rounded-md bg-indigo-500 p-3 text-white duration-100 ease-in-out hover:bg-indigo-600 focus:outline-none" %>
+      <%= f.submit "プロフィール更新", class: "inline-flex w-full items-center justify-center rounded-md bg-indigo-500 p-3 text-white duration-100 ease-in-out hover:bg-indigo-600 focus:outline-none" %>
     </div>
   <% end %>
-
-  <div class="text-center font-bold text-red-500">
-    <%= link_to "Withdraw from Ecommerce", confirm_withdraw_customers_path %>
-  </div>
 </div>

@@ -44,6 +44,8 @@ module Hello
 
     config.time_zone = 'Tokyo'
 
+    config.i18n.default_locale = :ja
+
     config.exceptions_app = routes
 
     config.after_initialize do
