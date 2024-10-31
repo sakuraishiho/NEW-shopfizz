@@ -6,7 +6,7 @@ class Admin::OrdersController < ApplicationController
 
   def update
     @order.update(order_params)
-    redirect_to admin_order_path(@order), notice: 'successfully updated order status'
+    redirect_to admin_root_path, notice: '注文ステータスが正常に更新されました。'
   end
 
   private

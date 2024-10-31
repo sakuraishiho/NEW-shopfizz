@@ -9,6 +9,16 @@ ja:
       short: "%Y年%m月%d日"
       long: "%Y年%m月%d日 (%A)"
 
+  views:
+    registrations:
+      new:
+        title: "新規会員登録"
+        name: "お名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認用）"
+        submit: "登録する"
+
   activerecord:
     errors:
       models:
@@ -24,11 +34,31 @@ ja:
               too_short: "パスワードは最低 %{count} 文字以上にしてください"
             password_confirmation:
               confirmation: "パスワード確認が一致しません"
+        product: # 商品モデル用のバリデーション
+          attributes:
+            name:
+              blank: "商品名を入力してください"
+            description:
+              blank: "詳細を入力してください"
+            price:
+              blank: "金額を入力してください"
+              not_a_number: "金額には数値を入力してください"
+            stock:
+              blank: "在庫数を入力してください"
+              not_a_number: "在庫数には数値を入力してください"
+            image:
+              blank: "画像ファイルを選択してください"
       messages:
-        not_saved: "%{count} 件のエラーが保存を妨げました。"  # 修正
+        not_saved: "%{count} 件のエラーが保存を妨げました。"
     attributes:
       customer:
         name: "名前"
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード確認"
+      product:
+        name: "商品名"
+        description: "詳細"
+        price: "金額"
+        stock: "在庫数"
+        image: "画像ファイル"

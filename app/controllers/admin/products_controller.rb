@@ -13,7 +13,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to admin_product_path(@product), notice: 'Product was successfully created.'
+      redirect_to admin_product_path(@product), notice: '商品が正常に作成されました。'
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to admin_product_path(@product), notice: 'Product was successfully updated.'
+      redirect_to admin_product_path(@product), notice: '商品が正常に更新されました。'
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class Admin::ProductsController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream
-      format.html { redirect_to admin_products_path, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to admin_products_path, notice: '商品が正常に削除されました。' }
     end
   end
 

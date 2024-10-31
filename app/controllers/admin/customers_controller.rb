@@ -11,7 +11,7 @@ class Admin::CustomersController < ApplicationController
 
   def update
     @customer.update(customer_params)
-    redirect_to request.referer, notice: 'successfully updated customer status'
+    redirect_to admin_customers_path, notice: '会員ステータスが正常に更新されました。'
   end
 
   private

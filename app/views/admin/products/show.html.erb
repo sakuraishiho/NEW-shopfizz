@@ -23,7 +23,7 @@
 
         <div class="mb-8">
           <p>
-            <%= @product.description %>
+            <%= @product.description.gsub("\n", "<br>").html_safe %>
           </p>
         </div>
 
