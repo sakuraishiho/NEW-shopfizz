@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
       products_path   # 一般ユーザーの場合
     end
   end
-  
+
   def render500(error = nil)
     Rails.logger.error("❌#{error.message}") if error&.message
     render template: 'errors/error500', layout: 'application', status: :internal_server_error
