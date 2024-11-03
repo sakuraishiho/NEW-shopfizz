@@ -100,7 +100,7 @@
                       </div>
                     </span>
                   <% end %>
-                </li>     
+                </li>
                 <li class='no-underline'>
                   <div class="flex items-center justify-center">
                     <div class="relative inline-block text-left dropdown">
@@ -133,6 +133,9 @@
                       </div>
                     </div>
                   </div>
+                </li>
+                <li class='text-white no-underline'>
+                  <%= link_to image_tag('messages.png', alt: 'お問い合わせ', class: 'inline-block mr-2 w-6 h-6 filter brightness-0 invert'), new_contact_path, class: "inline-block px-6 py-2 text-white font-semibold rounded-lg" %>
                 </li>
               <% else %>
                 <li class='px-4 text-white no-underline'>

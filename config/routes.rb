@@ -42,6 +42,10 @@ Rails.application.routes.draw do
     end
   end
 
+  authenticate :customer do
+    resources :contacts, only: [:new, :create]
+  end
+
   get '/up/', to: 'up#index', as: :up
   get '/up/databases', to: 'up#databases', as: :up_databases
   match '/500', to: 'application#render500', via: :all
