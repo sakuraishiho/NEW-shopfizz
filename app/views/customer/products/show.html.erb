@@ -31,6 +31,24 @@
             <%= f.submit "カートに追加", class:"w-full cursor-pointer focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" %>
           <% end %>
         <% end %>
+
+        <!-- 余白を追加 -->
+        <div class="mb-6"></div>
+
+        <div class="card-content">
+          <div class="content border border-gray-300 p-4 rounded-lg mb-4">
+            <div class="star-rating mb-2">
+              <div class="star-rating-front" style="width: <%= @product.review_score_percentage %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+            <div class="text-lg">
+              <%= @product.avg_score %>点（<%= @product.reviews.count %>件のレビュー）
+            </div>
+          </div>
+        </div>
+        </div>
+          <%= render 'customer/reviews/form', review: @review, product: @product %>
+        </div>
       </div>
     </div>
   </div>

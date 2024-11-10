@@ -14,6 +14,7 @@ class Customer < ApplicationRecord
   }
   has_many :cart_items, dependent: :destroy
   has_many :orders, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   def line_items_checkout
     cart_items.map do |cart_item|
@@ -36,4 +37,5 @@ class Customer < ApplicationRecord
   def active_for_authentication?
     super && (status == '通常')
   end
+
 end

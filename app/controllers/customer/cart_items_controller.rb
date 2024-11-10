@@ -4,27 +4,26 @@ class Customer::CartItemsController < ApplicationController
 
   def index
     @cart_items = current_customer.cart_items
-    @total = @cart_items.inject(0) { |sum, cart_item| sum + cart_item.line_total }
   end
 
   def create
     increase_or_create(params[:cart_item][:product_id])
-    redirect_to cart_items_path, notice: '商品がカートに正常に追加されました。'
+    redirect_to cart_items_path, notice: 'Successfully added product to your cart'
   end
 
   def increase
     @cart_item.increment!(:quantity, 1)
-    redirect_to request.referer, notice: 'カートが正常に更新されました。'
+    redirect_to request.referer, notice: 'Successfully updated your cart'
   end
 
   def decrease
     decrease_or_destroy(@cart_item)
-    redirect_to request.referer, notice: 'カートが正常に更新されました。'
+    redirect_to request.referer, notice: 'Successfully updated your cart'
   end
 
   def destroy
     @cart_item.destroy
-    redirect_to request.referer, notice: 'カートの商品が1つ削除されました。'
+    redirect_to request.referer, notice: 'Successfully deleted one cart item'
   end
 
   private

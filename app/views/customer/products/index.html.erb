@@ -30,9 +30,32 @@
             <% end %>
           </div>
         </div>
+
+        <div class="card-content">
+          <div class="content">
+            <div class="content average-score">
+              <div class="star-rating mb-2">
+                <div class="star-rating-front" style="width: <%= product.review_score_percentage %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+              <div class="average-score-display ml-3 pt-2">
+                <%= product.avg_score %>点（<%= product.reviews.count %>件のレビュー）
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="flex justify-start space-x-4 p-3 ">
+          <%= link_to product_reviews_path(product), class: "bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-3 rounded" do %>
+            レビューを見る
+          <% end %>
+          <%= link_to product_path(product), class: "bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-3 rounded" do %>
+            レビューを書く
+          <% end %>
+        </footer>
       <% end %>
     </div>
   <% end %>
 </div>
+
 
 <%= paginate @products %>

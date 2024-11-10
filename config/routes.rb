@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   end
 
   scope module: :customer do
-    resources :products, only: %i[index show]
+    resources :products, only: %i[index show] do
+      resources :reviews, only: %i[index create]
+    end
     resources :cart_items, only: %i[index create destroy] do
       member do
         patch 'increase'
