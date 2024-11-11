@@ -16,7 +16,7 @@ class Customer::CheckoutsController < ApplicationController
       customer_email: current_customer.email,
       mode: 'payment',
       payment_method_types: ['card'],
-      line_items:,
+      line_items: line_items, # 修正: line_itemsを直接渡す
       shipping_address_collection: {
         allowed_countries: ['JP']
       },

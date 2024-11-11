@@ -37,5 +37,4 @@ class Customer < ApplicationRecord
   def active_for_authentication?
     super && (status == '通常')
   end
-
 end

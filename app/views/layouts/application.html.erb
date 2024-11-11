@@ -2,12 +2,15 @@
 <html lang="ja">
   <head>
     <title>shopfizz</title>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A production ready example Rails app that's using Docker and Docker Compose.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Hachi+Maru+Pop&family=Palette+Mosaic&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/484e6509e8.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -24,7 +27,7 @@
     <meta name="theme-color" content="#ffffff">
   </head>
 
-  <body class="flex flex-col h-screen justify-between font-poppins">
+  <body class="flex flex-col h-screen justify-between hachi-maru-pop-regular">
     <div class='bg-gradient-to-b from-pink-500 to-purple-800 mb-8 z-10'>
       <div class='container mx-auto flex max-w-4xl items-center px-2 py-5'>
         <div class='mx-auto flex w-full flex-wrap items-center'>
@@ -172,6 +175,12 @@
       opacity:1;
       transform: translate(0) scale(1);
       visibility: visible;
+    }
+
+    .hachi-maru-pop-regular {
+      font-family: "Hachi Maru Pop", cursive;
+      font-weight: 400;
+      font-style: normal;
     }
 
     .text-3xl.font-bold {

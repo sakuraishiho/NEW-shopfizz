@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   end
 
   authenticate :customer do
-    resources :contacts, only: [:new, :create]
+    resources :contacts, only: %i[new create]
   end
 
   get '/up/', to: 'up#index', as: :up

@@ -1,10 +1,10 @@
 class ContactsController < ApplicationController
   before_action :authenticate_customer! # ログイン済みの顧客のみアクセス可
-  
+
   def new
     @contact = ContactForm.new
   end
-  
+
   def create
     @contact = ContactForm.new(contact_params)
     if @contact.valid?
@@ -18,9 +18,9 @@ class ContactsController < ApplicationController
       render :new
     end
   end
-  
+
   private
-  
+
   def contact_params
     params.require(:contact_form).permit(:subject, :name, :content)
   end

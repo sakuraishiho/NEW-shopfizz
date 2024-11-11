@@ -1,6 +1,6 @@
 <div class="mb-8 text-center">
   <span class="text-3xl font-bold">
-    注文完了
+    注文履歴
   </span>
   <br />
   <span class="text-xl font-bold">
@@ -17,7 +17,7 @@
           <%= link_to product_path(order_detail.product) do %>
             <div class="mt-4 md:mt-6 flex flex-row justify-start items-start md:items-center space-x-6 xl:space-x-8 w-full">
               <div class="pb-4 md:pb-8 w-40">
-                <%= image_tag order_detail.product.image, class: "aspect-square w-full rounded-xl object-cover" %>
+                <%= image_tag order_detail.product.image, class: "aspect-square w-full rounded-full object-cover" %>
               </div>
               <div class="border-b border-gray-200 md:flex-row flex-col flex justify-between items-start w-full pb-8 space-y-4 md:space-y-0">
                 <div class="w-full flex flex-col justify-start items-start space-y-8">

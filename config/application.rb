@@ -48,6 +48,8 @@ module Hello
 
     config.exceptions_app = routes
 
+    config.middleware.use Warden::Manager
+
     config.after_initialize do
       Rails.application.routes.append do
         match '*path', to: 'application#render404', via: :all

@@ -12,9 +12,9 @@ class Customer::ReviewsController < ApplicationController
     else
       @review = @product.reviews.build(review_params)
       @review.customer_id = current_customer.id
-  
+
       if @review.save
-        redirect_to product_reviews_path(@product), notice: "レビューの保存に成功しました。"
+        redirect_to product_reviews_path(@product), notice: 'レビューの保存に成功しました。'
       else
         render 'customer/products/show', alert: 'レビューの保存に失敗しました。'
       end
@@ -27,4 +27,3 @@ class Customer::ReviewsController < ApplicationController
     params.require(:review).permit(:product_id, :score, :content)
   end
 end
-

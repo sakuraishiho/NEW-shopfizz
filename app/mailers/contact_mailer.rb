@@ -4,7 +4,7 @@ class ContactMailer < ApplicationMailer
     mail(
       to: customer.email,
       from: Rails.application.credentials.dig(:gmail, :email),
-      subject: "お問い合わせについて【自動送信】"
+      subject: 'お問い合わせについて【自動送信】'
     )
   end
 
@@ -13,7 +13,7 @@ class ContactMailer < ApplicationMailer
     mail(
       to: 'sakura-35412@yahoo.ne.jp',
       from: Rails.application.credentials.dig(:gmail, :email),
-      subject: "新しいお問い合わせがありました【自動送信】"
+      subject: '新しいお問い合わせがありました【自動送信】'
     )
   end
 end
