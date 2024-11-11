@@ -137,7 +137,7 @@ product4.image.attach(io: File.open(Rails.root.join('app/assets/images/assorted_
 product4.save!
 
 product5 = Product.new(
-    name: "ケーキ",
+    name: "チーズケーキ",
     description: "【商品説明】
     自然栽培いせひかり糀甘酒のチーズケーキ・無添加手作り・グルテンフリー•ノンアルコールなのでお子様でも食べて頂けます。 \n
     【原材料】 
