@@ -3,7 +3,7 @@ class Admin::PagesController < ApplicationController
 
   def home
     @orders, @selected = get_orders(params)
-    @orders = Order.page(params[:page]).per(10) # 1ページあたり10件を表示
+    @orders = @orders.page(params[:page]).per(10) # 検索結果にページネーションを適用
     today_orders = Order.created_today
     @today_total_orders = total_orders(today_orders)
     @today_total_sales = total_sales(today_orders)
@@ -22,16 +22,16 @@ class Admin::PagesController < ApplicationController
 
   def get_by_enum_value(status)
     case status
-    when 'waiting_payment'
-      [Order.waiting_payment.eager_load(:customer).latest, 'waiting_payment']
-    when 'confirm_payment'
-      [Order.confirm_payment.eager_load(:customer).latest, 'confirm_payment']
-    when 'shipped'
-      [Order.shipped.eager_load(:customer).latest, 'shipped']
-    when 'out_of_delivery'
-      [Order.out_of_delivery.eager_load(:customer).latest, 'out_of_delivery']
-    when 'delivered'
-      [Order.delivered.eager_load(:customer).latest, 'delivered']
+    when '入金待ち'
+      [Order.waiting_payment.eager_load(:customer).latest, '入金待ち']
+    when '入金確認'
+      [Order.confirm_payment.eager_load(:customer).latest, '入金確認']
+    when '出荷済み'
+      [Order.shipped.eager_load(:customer).latest, '出荷済み']
+    when '配送中'
+      [Order.out_of_delivery.eager_load(:customer).latest, '配送中']
+    when '配達済み'
+      [Order.delivered.eager_load(:customer).latest, '配達済み']
     end
   end
 
