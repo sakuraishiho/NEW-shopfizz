@@ -1,10 +1,22 @@
+# Docker のインストール（for Mac）
+
+以下サイトを参考にしてください。
+
+↓
+
+<https://zenn.dev/farstep/books/7f169cdc597ada/viewer/4f6d6f>
+
+# Docker のインストール（for Windows）
+
+以下サイトを参考にしてください。
+
+↓
+
+<https://zenn.dev/giana12th/articles/6cc6540e0dd306>  
+
 # 開発言語
 - Ruby: 3.1.2
 - Rails: 7.0.4
-
-# データベース
-- Redis
-- PostgreSQL: 15.1 (Debian 15.1-1.pgdg110+1)
 
 # UI
 - Tailwind CSS
@@ -15,25 +27,16 @@
 # 環境構築
 - Docker
 
+# データベース
+- Redis
+- PostgreSQL: 15.1 (Debian 15.1-1.pgdg110+1)
+
 # コードの品質管理
 - Sidekiq
 - RuboCop
 
 # テキストエディタ
-- Visual Studio Code
-
-# Docker のインストール（for Mac）
-
-以下サイトを参考にしてください。
-↓
-<https://zenn.dev/farstep/books/7f169cdc597ada/viewer/4f6d6f>
-
-# Docker のインストール（for Windows）
-
-以下サイトを参考にしてください。
-↓
-<https://zenn.dev/giana12th/articles/6cc6540e0dd306>
-
+- Visual Studio Code  
 
 # 実行手順
 ```bash
@@ -54,8 +57,7 @@ $ ./run rails db:setup
 
 # コンテナを停止
 $ docker compose down
-```
-
+```  
 
 # カタログ設計
 <https://docs.google.com/spreadsheets/d/11q4k7NTEOfUuA8FurhN79Z86FBvZ4V3FcT8Be0Ynwcc/edit?gid=1407875893#gid=1407875893>
