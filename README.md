@@ -38,13 +38,11 @@ $ docker compose down
 <https://app.visily.ai/welcome-to-workspace/ademIM1ayqOUfjxWgt2c6C8Dbrb5VTpfmpF5T5ITebrRgvQtz1Iwn0E8h67HLGjCo6RXiDXj2W1P8SjRI5qVy3KDULsmSzR4Qx9gc2Kq6kgfNx2FA1SMx5yF2LIQoHfpjrQ3P7hdKGdoqEhFVBh7vo175f83f57c97421cb9a19d31849d4b96>
 
 # ER図
-`![表示](./app/assets/svg/er.svg)`
+`![ER図](https://raw.githubusercontent.com/sakuraishiho/NEW-shopfizz/main/app/assets/svg/er.svg)
 
 # 画面遷移図
 admin 
-
-`![表示](./app/assets/svg/admin.svg)`
+`![表示](https://raw.githubusercontent.com/sakuraishiho/NEW-shopfizz/main/app/assets/svg/admin.svg)
 
 customer 
-
-`![表示](./app/assets/svg/customer.svg)`
+`![表示](https://raw.githubusercontent.com/sakuraishiho/NEW-shopfizz/main/app/assets/svg/customer.svg)
