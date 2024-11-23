@@ -1,50 +1,56 @@
 # Docker のインストール（for Mac）
 
-以下サイトを参考にしてください。
-
-↓
-
-<https://zenn.dev/farstep/books/7f169cdc597ada/viewer/4f6d6f>
+以下サイトを参考にしてください。  
+↓  
+[Docker インストール（for Mac）](https://zenn.dev/farstep/books/7f169cdc597ada/viewer/4f6d6f)
 
 # Docker のインストール（for Windows）
 
-以下サイトを参考にしてください。
+以下サイトを参考にしてください。  
+↓  
+[Docker インストール（for Windows）](https://zenn.dev/giana12th/articles/6cc6540e0dd306)
 
-↓
+---
 
-<https://zenn.dev/giana12th/articles/6cc6540e0dd306>  
+# 開発環境
 
-# 開発言語
-- Ruby: 3.1.2
-- Rails: 7.0.4
+## 開発言語
+- **Ruby**: 3.1.2
+- **Rails**: 7.0.4
 
-# UI
-- Tailwind CSS
+## UI
+- **Tailwind CSS**
 
-# 決済機能
-- Stripe
+## 決済機能
+- **Stripe**
 
-# 環境構築
-- Docker
+## 環境構築
+- **Docker**
 
-# データベース
-- Redis
-- PostgreSQL: 15.1 (Debian 15.1-1.pgdg110+1)
+## データベース
+- **Redis**
+- **PostgreSQL**: 15.1 (Debian 15.1-1.pgdg110+1)
 
-# コードの品質管理
-- Sidekiq
-- RuboCop
+## コードの品質管理
+- **Sidekiq**
+- **RuboCop**
 
-# テキストエディタ
-- Visual Studio Code  
+## テキストエディタ
+- **Visual Studio Code**
+
+---
 
 # 実行手順
+
+以下の手順に従って環境をセットアップしてください。
+
 ```bash
+# リポジトリをクローン
 $ git clone https://git@github.com:sakuraishiho/shopfizz.git
 $ cd shopfizz
 
 # 必要に応じて特定のブランチに切り替え
-$ git checkout step1（任意のブランチ名）
+$ git checkout step1  # 任意のブランチ名
 
 # .env.exampleファイルをコピー
 $ cp .env.example .env
@@ -58,6 +64,7 @@ $ ./run rails db:setup
 # コンテナを停止
 $ docker compose down
 ```  
+
 
 # カタログ設計
 <https://docs.google.com/spreadsheets/d/11q4k7NTEOfUuA8FurhN79Z86FBvZ4V3FcT8Be0Ynwcc/edit?gid=1407875893#gid=1407875893>
