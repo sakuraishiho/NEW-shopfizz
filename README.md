@@ -14,28 +14,28 @@
 
 # 開発環境
 
-## 開発言語
+### 01 開発言語
 - **Ruby**: 3.1.2
 - **Rails**: 7.0.4
 
-## UI
+### 02 UI
 - **Tailwind CSS**
 
-## 決済機能
+### 03 決済機能
 - **Stripe**
 
-## 環境構築
+### 04 環境構築
 - **Docker**
 
-## データベース
+### 05 データベース
 - **Redis**
 - **PostgreSQL**: 15.1 (Debian 15.1-1.pgdg110+1)
 
-## コードの品質管理
+### 06 コードの品質管理
 - **Sidekiq**
 - **RuboCop**
 
-## テキストエディタ
+### 07 テキストエディタ
 - **Visual Studio Code**
 
 ---
@@ -63,8 +63,8 @@ $ ./run rails db:setup
 
 # コンテナを停止
 $ docker compose down
-```  
-
+```
+---
 
 # カタログ設計
 <https://docs.google.com/spreadsheets/d/11q4k7NTEOfUuA8FurhN79Z86FBvZ4V3FcT8Be0Ynwcc/edit?gid=1407875893#gid=1407875893>
