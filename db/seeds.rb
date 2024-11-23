@@ -202,7 +202,7 @@ product9.image.attach(io: File.open(Rails.root.join('app/assets/images/strawberr
 product9.save!
 
 product10 = Product.new(
-    name: "タルト",
+    name: "チーズタルト",
     description: "【商品説明】
     バター不使用のザクほろ米粉タルトに、なめらかでさっぱりかつ濃厚なチーズケーキを合わせました。チーズケーキは生クリームの代わりにヨーグルトを使用しヘルシーにしています。 \n
     【原材料】 

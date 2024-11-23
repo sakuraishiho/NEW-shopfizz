@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :products, only: %i[index show] do
       resources :reviews, only: %i[index create]
     end
+    resources :contacts, only: %i[new create]
     resources :cart_items, only: %i[index create destroy] do
       member do
         patch 'increase'
@@ -42,10 +43,6 @@ Rails.application.routes.draw do
         patch 'withdraw'
       end
     end
-  end
-
-  authenticate :customer do
-    resources :contacts, only: %i[new create]
   end
 
   get '/up/', to: 'up#index', as: :up
