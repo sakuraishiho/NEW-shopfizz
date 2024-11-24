@@ -9,16 +9,6 @@ ja:
       short: "%Y年%m月%d日"
       long: "%Y年%m月%d日 (%A)"
 
-  views:
-    registrations:
-      new:
-        title: "新規会員登録"
-        name: "お名前"
-        email: "メールアドレス"
-        password: "パスワード"
-        password_confirmation: "パスワード（確認用）"
-        submit: "登録する"
-
   activerecord:
     errors:
       models:
@@ -74,26 +64,3 @@ ja:
       messages:
         not_saved: "%{count} 件のエラーが保存を妨げました。"
         
-    attributes:
-      customer:
-        name: "名前"
-        email: "メールアドレス"
-        password: "パスワード"
-        password_confirmation: "パスワード確認"
-        current_password: "現在のパスワード"
-
-      product:
-        name: "商品名"
-        description: "詳細"
-        price: "金額"
-        stock: "在庫数"
-        image: "画像ファイル"
-
-      review:
-        score: "点数を入力してください"
-        content: "内容を入力してください"
-
-      contact_form:
-        subject: "件名を入力してください。"
-        name: "名前を入力してください。"
-        content: "内容を入力してください。" 

@@ -7,7 +7,7 @@
        %>
     </p>
     <ul>
-      <% resource.errors.full_messages.each do |message| %>
+      <% resource.errors.messages.values.flatten.uniq.each do |message| %>
         <li><%= message.gsub(/^[^ ]+\s/, '') %></li> <!-- フィールド名を削除してメッセージのみ表示 -->
       <% end %>
     </ul>

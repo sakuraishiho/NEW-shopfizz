@@ -74,8 +74,9 @@ group :test do
   gem "webdrivers"
 end
 
- gem "devise"
- gem "stripe"
+gem "devise"
+gem "stripe"
+gem 'devise-i18n'
 gem 'kaminari', '1.2.2'
 gem 'kaminari-actionview', '1.2.2'
 gem 'kaminari-activerecord', '1.2.2'
