@@ -1,18 +1,22 @@
+p '==================== admin create ===================='
+admins = [
+  { email: "admin1@example.com", password: "password123" },
+  { email: "admin2@example.com", password: "password123" },
+  { email: "admin3@example.com", password: "password123" },
+  { email: "admin4@example.com", password: "password123" },
+  { email: "admin5@example.com", password: "password123" }
+]
+
+admins.each do |admin|
+  Admin.create!(admin)
+end
+
 p '==================== customer create ===================='
 Customer.create!(name: "櫻井 志保", email: "dpro202407@gmail.com", password: "111111")
 Customer.create!(name: "佐藤 真守", email: "dpro202408@gmail.com", password: "111111")
 Customer.create!(name: "田中 早紀", email: "dpro202409@gmail.com", password: "111111")
 Customer.create!(name: "星野 由衣", email: "dpro202410@gmail.com", password: "111111")
 Customer.create!(name: "鈴木 花子", email: "dpro202411@gmail.com", password: "111111")
-Customer.create!(name: "佐々木 健", email: "dpro202412@gmail.com", password: "111111")
-Customer.create!(name: "中村 舞子", email: "dpro202501@gmail.com", password: "111111")
-Customer.create!(name: "安藤 夢子", email: "dpro202502@gmail.com", password: "111111")
-Customer.create!(name: "渡辺 結子", email: "dpro202503@gmail.com", password: "111111")
-Customer.create!(name: "松本 彩子", email: "dpro202504@gmail.com", password: "111111")
-Customer.create!(name: "杉村 大和", email: "dpro202505@gmail.com", password: "111111")
-
-p '==================== admin create ===================='
-Admin.create!(email: "admin@gmail.com", password: "1234qwer")
 
 p '==================== product create ===================='
 product1 = Product.new(
@@ -263,3 +267,73 @@ product14 = Product.new(
 )
 product14.image.attach(io: File.open(Rails.root.join('app/assets/images/roll_cake.jpg')), filename: 'roll_cake.jpg')
 product14.save!
+
+p '==================== Order create ===================='
+Customer.pluck(:id).each do |customer_id|
+    # 顧客ごとに5件の注文を作成
+    5.times do |i|
+      Order.create!(
+        customer_id: customer_id,
+        name: "Order ##{i + 1} for Customer #{customer_id}",
+        billing_amount: 0,
+        postal_code: "123-4567",
+        prefecture: "Tokyo",
+        address1: "Shinjuku 1-1-1",
+        address2: "Building 101",
+        postage: 500,
+        status: 0
+      )
+    end
+end
+
+p '==================== CartItem create ===================='
+5.times do
+  CartItem.create!(
+    quantity: rand(1..5),
+    customer_id: Customer.pluck(:id).sample,
+    product_id: Product.pluck(:id).sample
+  )
+end
+
+p '==================== OrderDetail create ===================='
+Customer.pluck(:id).each do |customer_id|
+    # 顧客ごとに作成した注文ごとにOrderDetailを作成
+    5.times do |i|
+      order = Order.find_by(customer_id: customer_id, name: "Order ##{i + 1} for Customer #{customer_id}")
+  
+      total_amount = 0  # 小計を初期化
+  
+      # 各注文に5件のOrderDetailを作成
+      5.times do
+        product = Product.order('RANDOM()').first # ランダムに商品を選択
+        price = rand(1000..5000)                  # 商品の価格をランダムに設定
+        quantity = rand(1..3)                     # 注文数量をランダムに設定
+  
+        # OrderDetail を作成
+        order_detail = OrderDetail.create!(
+          price: price,
+          quantity: quantity,
+          order_id: order.id,
+          product_id: product.id
+        )
+  
+        # 小計に価格 * 数量を加算
+        total_amount += price * quantity
+      end
+  
+      # billing_amount を更新 (小計 + 送料)
+      order.update!(billing_amount: total_amount + order.postage)
+    end
+end
+
+p '==================== Review create ===================='
+Product.find_each do |product|
+  5.times do
+    Review.create!(
+      content: "これはレビュー内容です。",
+      score: rand(1..5),
+      customer_id: Customer.pluck(:id).sample,  # 顧客をランダムに選択
+      product_id: product.id  # 商品ごとにレビューを作成
+    )
+  end
+end

@@ -80,7 +80,14 @@ $ docker compose down
 ---
 
 # ワイヤーフレーム
-<https://app.visily.ai/welcome-to-workspace/ademIM1ayqOUfjxWgt2c6C8Dbrb5VTpfmpF5T5ITebrRgvQtz1Iwn0E8h67HLGjCo6RXiDXj2W1P8SjRI5qVy3KDULsmSzR4Qx9gc2Kq6kgfNx2FA1SMx5yF2LIQoHfpjrQ3P7hdKGdoqEhFVBh7vo175f83f57c97421cb9a19d31849d4b96>
+##### 管理者  
+<https://drive.google.com/drive/u/0/folders/1i3bN2RQ0yiN6qNnOIfIbArZjXtsNrxzc>
+
+##### 利用者    
+<https://drive.google.com/drive/u/0/folders/1EC46rW1iPL674b-tuT8Pl878OkUTNaXn>
+
+##### ログアウト中  
+<https://drive.google.com/drive/u/0/folders/1WzGMTd2No0rSUdT0LIKB13XxbunwTO0H>
 
 ---
 
@@ -90,8 +97,8 @@ $ docker compose down
 ---
 
 # 画面遷移図
-##### admin 
+##### 管理者  
 `![表示](https://raw.githubusercontent.com/sakuraishiho/NEW-shopfizz/main/app/assets/svg/admin.svg)
 
-##### customer 
+##### 利用者  
 `![表示](https://raw.githubusercontent.com/sakuraishiho/NEW-shopfizz/main/app/assets/svg/customer.svg)
