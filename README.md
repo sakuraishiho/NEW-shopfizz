@@ -157,13 +157,13 @@ $ docker-compose run --rm　web rake db:migrate
 
 # ワイヤーフレーム
 ##### 管理者  
-<https://drive.google.com/drive/u/0/folders/1i3bN2RQ0yiN6qNnOIfIbArZjXtsNrxzc>
+<https://drive.google.com/drive/folders/1i3bN2RQ0yiN6qNnOIfIbArZjXtsNrxzc?usp=sharing>
 
 ##### 利用者    
-<https://drive.google.com/drive/u/0/folders/1EC46rW1iPL674b-tuT8Pl878OkUTNaXn>
+<https://drive.google.com/drive/folders/1EC46rW1iPL674b-tuT8Pl878OkUTNaXn?usp=sharing>
 
 ##### ログアウト中  
-<https://drive.google.com/drive/u/0/folders/1WzGMTd2No0rSUdT0LIKB13XxbunwTO0H>
+<https://drive.google.com/drive/folders/1WzGMTd2No0rSUdT0LIKB13XxbunwTO0H?usp=sharing>
 
 ---
 
