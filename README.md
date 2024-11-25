@@ -41,6 +41,9 @@
 ### 08 テキストフォント
 - **hachi-maru-pop-regular**
 
+### 09 グラフ描画ツール
+- **graphviz version 2.43.0 (0)**
+
 ---
 
 
@@ -103,6 +106,7 @@ end
 group :development do
   gem "web-console"
   gem "rack-mini-profiler"
+  gem "rails-erd"
 end
 
 group :test do
