@@ -173,14 +173,14 @@ $ docker-compose run --rm　web rake db:migrate
 
 
 # ER図
-`![ER図](https://raw.githubusercontent.com/sakuraishiho/NEW-shopfizz/main/app/assets/svg/er.svg)
+`![ER図](https://raw.githubusercontent.com/sakuraishiho/Shopfizz/refs/heads/main/app/assets/svg/er.svg)
 
 ---
 
 
 # 画面遷移図
 ##### 管理者  
-`![表示](https://raw.githubusercontent.com/sakuraishiho/NEW-shopfizz/main/app/assets/svg/admin.svg)
+`![表示](https://raw.githubusercontent.com/sakuraishiho/Shopfizz/refs/heads/main/app/assets/svg/admin.svg)
 
 ##### 利用者  
-`![表示](https://raw.githubusercontent.com/sakuraishiho/NEW-shopfizz/main/app/assets/svg/customer.svg)
+`![表示](https://raw.githubusercontent.com/sakuraishiho/Shopfizz/refs/heads/main/app/assets/svg/customer.svg)
