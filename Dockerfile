@@ -18,6 +18,8 @@ RUN bash -c "set -o pipefail && apt-get update \
   && useradd --create-home --no-log-init -u \"${UID}\" -g \"${GID}\" ruby \
   && mkdir /node_modules && chown ruby:ruby -R /node_modules /app"
 
+RUN curl https://cli-assets.heroku.com/install.sh | sh
+
 USER ruby
 
 COPY --chown=ruby:ruby Gemfile* ./
@@ -77,3 +79,4 @@ ENTRYPOINT ["/app/bin/docker-entrypoint-web"]
 EXPOSE 8000
 
 CMD ["rails", "s"]
+
