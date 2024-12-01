@@ -21,9 +21,5 @@ if compgen -G "${manifest_files}" > /dev/null 2>&1; then
     -delete
 fi
 
-# デフォルトのポートを設定
-PORT=${PORT:-3000}  # $PORTが設定されていない場合は3000を使う
-
-# Rails サーバを指定されたポートで起動
-exec rails s -b '0.0.0.0' -p "$PORT"
+exec "$@"
 
